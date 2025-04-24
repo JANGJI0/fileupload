@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시글 삭제</title>
+</head>
+<body>
+	<h3>게시글 삭제</h3>
+	<form action="/removeBoard" method="post">
+	<!-- 삭제할 게시글 번호를 숨겨서 같이 보냄 -->
+	<input type="hidden" name="bno" value="{{bno}}">
+	
+	<!-- 비밀번호 입력 받기 -->
+	<div class="mb-3">
+		<label>비밀번호</label>
+		<input type="password" name="pw" class="form-control" placheolder="비밀번호 입력" required>
+	</div>
+	
+	<!-- 삭제 버틍 -->
+	<button type="submit" class="btn btn-danger">삭제하기</button>
+	</form>
+	
+	<!-- 실패 메세지 출력 -->
+	{{#msg}}
+		<div class="alert alert-danger mt-3">{{msg}}</div>
+	{{/msg}}
+
+</body>
+</html>
